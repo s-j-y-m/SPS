@@ -60,7 +60,7 @@ body {
 }
 
 /*header section*/
-.hero_area {
+.bg_1 {
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -69,12 +69,13 @@ body {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  background-image: url(../image/hero-bg.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://cdn.jsdelivr.net/gh/s-j-y-m/picgo@main/img/2025-01-11_15.37.06.png);
   background-size: cover;
   background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
-.sub_page .hero_area {
+.sub_page .bg_1 {
   height: auto;
 }
 
@@ -82,7 +83,7 @@ body {
   padding-top: 0;
 }
 
-.hero_area.sub_pages {
+.bg_1.sub_pages {
   height: auto;
 }
 
