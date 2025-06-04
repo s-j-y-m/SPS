@@ -94,6 +94,10 @@
                       <p id="hitokoto" class="cursor"></p>
                       <p id="hitokoto_from" style="font-size: 0.8em; color: #7df0ff;"></p>
                       <script>
+                        function sleep(ms) {
+                          return new Promise(resolve => setTimeout(resolve, ms));
+                        }
+
                         function typewriter(element, text, speed = 100) {
                           let i = 0;
                           element.innerText = '';
@@ -130,27 +134,30 @@
                           const hitokotoElem = document.getElementById('hitokoto');
                           const fromElem = document.getElementById('hitokoto_from');
                           
-                          try {
-                            fromElem.classList.remove('show');
-                            if (hitokotoElem.innerText) {
-                              await deleteText(hitokotoElem);
+                          while (true) {
+                            try {
+                              fromElem.classList.remove('show');
+                              if (hitokotoElem.innerText) {
+                                await deleteText(hitokotoElem);
+                              }
+                              const response = await fetch('https://international.v1.hitokoto.cn/');
+                              if (!response.ok) throw new Error('Network response was not ok');
+                              const data = await response.json();
+                              await typewriter(hitokotoElem, `『${data.hitokoto}』`, 100);
+                              fromElem.innerText = `——「${data.from}」`;
+                              fromElem.classList.add('show');
+                              await sleep(10000); // 显示10秒
+                            } catch (error) {
+                              console.error('获取一言失败:', error);
+                              await typewriter(hitokotoElem, '『让每一位玩家都能体会到MC最纯粹的乐趣!』');
+                              fromElem.innerText = '——「世间一梦」';
+                              fromElem.classList.add('show');
+                              await sleep(5000);
                             }
-                            const response = await fetch('https://international.v1.hitokoto.cn/');
-                            if (!response.ok) throw new Error('Network response was not ok');
-                            const data = await response.json();
-                            await typewriter(hitokotoElem, `『${data.hitokoto}』`, 100);
-                            fromElem.innerText = `——「${data.from}」`;
-                            fromElem.classList.add('show');
-                          } catch (error) {
-                            console.error('获取一言失败:', error);
-                            await typewriter(hitokotoElem, '『让每一位玩家都能体会到MC最纯粹的乐趣!』');
-                            fromElem.innerText = '——「世间一梦」';
-                            fromElem.classList.add('show');
                           }
                         }
 
                         fetchHitokoto();
-                        setInterval(fetchHitokoto, 12000);
                       </script>
                       <div class="">
                         <a href="https://qm.qq.com/q/tBcEc0osq4">加 入 我 们</a>
