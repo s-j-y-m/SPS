@@ -90,9 +90,27 @@
                         @keyframes cursor {
                           50% { opacity: 0; }
                         }
+                        /* 添加占位区域样式 */
+                        .hitokoto-container {
+                          min-height: 100px;
+                          display: flex;
+                          flex-direction: column;
+                          justify-content: center;
+                        }
+                        #hitokoto {
+                          min-height: 30px; /* 一言文本的最小高度 */
+                          margin-bottom: 10px;
+                        }
+                        #hitokoto_from {
+                          min-height: 24px; /* 来源文本的最小高度 */
+                          opacity: 0;
+                          transition: opacity 0.5s ease-in-out;
+                        }
                       </style>
-                      <p id="hitokoto" class="cursor"></p>
-                      <p id="hitokoto_from" style="font-size: 0.8em; color: #7df0ff;"></p>
+                      <div class="hitokoto-container">
+                        <p id="hitokoto" class="cursor"></p>
+                        <p id="hitokoto_from" style="font-size: 0.8em; color: #7df0ff;"></p>
+                      </div>
                       <script>
                         function sleep(ms) {
                           return new Promise(resolve => setTimeout(resolve, ms));
