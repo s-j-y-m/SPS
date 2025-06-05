@@ -69,7 +69,7 @@ body {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://cdn.jsdelivr.net/gh/s-j-y-m/picgo@main/img/2025-01-11_15.37.06.png);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://cdn.jsdelivr.net/gh/s-j-y-m/picgo@main/img/bg_1.png);
   background-size: cover;
   background-attachment: fixed;
   background-color: rgba(0, 0, 0, 0.8);
@@ -297,7 +297,7 @@ a:focus {
 }
 
 .us_section {
-  background-image: linear-gradient(rgba(0, 89, 255, 0.4), rgba(0, 0, 0, 0.5)), url(https://cdn.jsdelivr.net/gh/s-j-y-m/picgo@main/img/2025-03-24_23.13.29.png);
+  background-image: linear-gradient(rgba(0, 89, 255, 0.4), rgba(0, 0, 0, 0.5)), url(https://cdn.jsdelivr.net/gh/s-j-y-m/picgo@main/img/bg_2.png);
   background-size: cover;
   background-attachment: fixed;
   color: #ffffff;
@@ -344,7 +344,7 @@ a:focus {
 }
 
 .heathy_section {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(https://cdn.jsdelivr.net/gh/s-j-y-m/picgo@main/img/2025-03-24_23.17.01.png);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(https://cdn.jsdelivr.net/gh/s-j-y-m/picgo@main/img/bg_3.png);
   background-size: cover;
   background-attachment: fixed;
   color: #ffffff;
